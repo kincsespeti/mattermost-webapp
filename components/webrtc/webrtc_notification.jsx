@@ -30,7 +30,6 @@ export default class WebrtcNotification extends React.Component {
         this.handleAnswer = this.handleAnswer.bind(this);
         this.handleTimeout = this.handleTimeout.bind(this);
         this.stopRinging = this.stopRinging.bind(this);
-        this.closeRightHandSide = this.closeRightHandSide.bind(this);
 
         this.state = {
             userCalling: null,
@@ -75,12 +74,11 @@ export default class WebrtcNotification extends React.Component {
         this.setState({userCalling: null});
     }
 
-    closeRightHandSide(e) {
+    closeRightHandSide = (e) => {
         e.preventDefault();
         GlobalActions.emitCloseRightHandSide();
-        setTimeout(() => {
-            $('.app__body .inner-wrap').addClass('move--left');
-        }, 0);
+        // TODO
+        this.props.actions.closeRhs();
     }
 
     onIncomingCall(incoming) {

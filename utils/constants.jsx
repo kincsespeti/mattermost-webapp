@@ -243,6 +243,14 @@ export const ActionTypes = keyMirror({
     SELECT_CHANNEL_WITH_MEMBER: null,
 
     INCREMENT_EMOJI_PICKER_PAGE: null,
+
+    TOGGLE_LHS: null,
+    OPEN_LHS: null,
+    CLOSE_LHS: null,
+
+    TOGGLE_RHS_MENU: null,
+    OPEN_RHS_MENU: null,
+    CLOSE_RHS_MENU: null,
 });
 
 export const WebrtcActionTypes = keyMirror({

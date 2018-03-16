@@ -1,0 +1,27 @@
+// Copyright (c) 2018-present Mattermost, Inc. All Rights Reserved.
+// See License.txt for license information.
+
+import {combineReducers} from 'redux';
+
+import {ActionTypes} from 'utils/constants.jsx';
+
+function isOpen(state = false, action) {
+    switch (action.type) {
+    case ActionTypes.TOGGLE_LHS:
+        return !state;
+    case ActionTypes.OPEN_LHS:
+        return true;
+    case ActionTypes.CLOSE_LHS:
+        return false;
+    case ActionTypes.TOGGLE_RHS_MENU:
+        return false;
+    case ActionTypes.OPEN_RHS_MENU:
+        return false;
+    default:
+        return state;
+    }
+}
+
+export default combineReducers({
+    isOpen,
+});

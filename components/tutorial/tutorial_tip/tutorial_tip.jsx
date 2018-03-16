@@ -55,7 +55,7 @@ export default class TutorialTip extends React.Component {
             trackEvent('tutorial', tag);
         }
 
-        this.closeRightSidebar();
+        this.props.actions.closeRhsMenu();
         this.hide();
 
         const step = PreferenceStore.getInt(Preferences.TUTORIAL_STEP, UserStore.getCurrentId(), 0);
@@ -64,15 +64,6 @@ export default class TutorialTip extends React.Component {
             UserStore.getCurrentId(),
             (step + 1).toString()
         );
-    }
-
-    closeRightSidebar() {
-        if (Utils.isMobile()) {
-            setTimeout(() => {
-                document.querySelector('.app__body .inner-wrap').classList.remove('move--left-small');
-                document.querySelector('.app__body .sidebar--menu').classList.remove('move--left');
-            });
-        }
     }
 
     skipTutorial = (e) => {
@@ -214,40 +205,8 @@ TutorialTip.propTypes = {
     placement: PropTypes.string.isRequired,
     overlayClass: PropTypes.string,
     diagnosticsTag: PropTypes.string,
+    // TODO: Connect?
+    actions: PropTypes.shape({
+        closeRhsMenu: PropTypes.func.isRequired,
+    }),
 };
-
-export function createMenuTip(toggleFunc, onBottom) {
-    const screens = [];
-
-    screens.push(
-        <div>
-            <FormattedHTMLMessage
-                id='sidebar_header.tutorial'
-                defaultMessage='<h4>Main Menu</h4>
-                <p>The <strong>Main Menu</strong> is where you can <strong>Invite New Members</strong>, access your <strong>Account Settings</strong> and set your <strong>Theme Color</strong>.</p>
-                <p>Team administrators can also access their <strong>Team Settings</strong> from this menu.</p><p>System administrators will find a <strong>System Console</strong> option to administrate the entire system.</p>'
-            />
-        </div>
-    );
-
-    let placement = 'right';
-    let arrow = 'left';
-    if (onBottom) {
-        placement = 'bottom';
-        arrow = 'up';
-    }
-
-    return (
-        <div
-            onClick={toggleFunc}
-        >
-            <TutorialTip
-                ref='tip'
-                placement={placement}
-                screens={screens}
-                overlayClass={'tip-overlay--header--' + arrow}
-                diagnosticsTag='tutorial_tip_3_main_menu'
-            />
-        </div>
-    );
-}

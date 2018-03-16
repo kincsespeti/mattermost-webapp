@@ -24,7 +24,7 @@ import TeamSettingsModal from 'components/team_settings_modal.jsx';
 import ImportThemeModal from 'components/user_settings/import_theme_modal.jsx';
 import UserSettingsModal from 'components/user_settings/modal';
 import WebrtcNotification from 'components/webrtc/webrtc_notification.jsx';
-import WebrtcSidebar from 'components/webrtc/webrtc_sidebar.jsx';
+import WebrtcSidebar from 'components/webrtc/sidebar';
 import ModalController from 'components/modal_controller';
 import TeamSidebar from 'components/team_sidebar';
 import Sidebar from 'components/sidebar';

@@ -6,6 +6,8 @@ import {getTeamByName} from 'mattermost-redux/selectors/entities/teams';
 
 import Constants from 'utils/constants';
 import {getGlobalItem} from 'selectors/storage';
+import {getIsRhsOpen, getIsRhsMenuOpen} from 'selectors/rhs';
+import {getIsLhsOpen} from 'selectors/lhs';
 
 import CenterChannel from './center_channel';
 
@@ -20,6 +22,10 @@ const getLastChannelPath = (state, teamName) => {
 
 const mapStateToProps = (state, ownProps) => ({
     lastChannelPath: `${ownProps.match.url}/channels/${getLastChannelPath(state, ownProps.match.params.team)}`,
+    lhsOpen: getIsLhsOpen(state),
+    rhsOpen: getIsRhsOpen(state),
+    rhsMenuOpen: getIsRhsMenuOpen(state),
+    webRtcOpen: state.views.webrtc.isOpen,
 });
 
 export default connect(mapStateToProps)(CenterChannel);
