@@ -18,6 +18,8 @@ const nl = require('!!file-loader?name=i18n/[name].[hash].[ext]!./nl.json');
 
 const pl = require('!!file-loader?name=i18n/[name].[hash].[ext]!./pl.json');
 
+const hu = require('!!file-loader?name=i18n/[name].[hash].[ext]!./hu.json');
+
 const ptBR = require('!!file-loader?name=i18n/[name].[hash].[ext]!./pt-BR.json');
 
  //eslint-disable-line camelcase
@@ -40,6 +42,7 @@ import jaLocaleData from 'react-intl/locale-data/ja';
 import koLocaleData from 'react-intl/locale-data/ko';
 import nlLocaleData from 'react-intl/locale-data/nl';
 import plLocaleData from 'react-intl/locale-data/pl';
+import huLocaleData from 'react-intl/locale-data/hu';
 import ptLocaleData from 'react-intl/locale-data/pt';
 import trLocaleData from 'react-intl/locale-data/tr';
 import ruLocaleData from 'react-intl/locale-data/ru';
@@ -103,6 +106,12 @@ const languages = {
         name: 'Polski (Alpha)',
         order: 6,
         url: pl,
+    },
+	hu: {
+        value: 'hu',
+        name: 'Hungarian (Alpha)',
+        order: 7,
+        url: hu
     },
     'pt-BR': {
         value: 'pt-BR',
@@ -169,6 +178,7 @@ export function safariFix(callback) {
         'intl/locale-data/jsonp/ko.js',
         'intl/locale-data/jsonp/nl.js',
         'intl/locale-data/jsonp/pl.js',
+		'intl/locale-data/jsonp/hu.js',
         'intl/locale-data/jsonp/pt.js',
         'intl/locale-data/jsonp/tr.js',
         'intl/locale-data/jsonp/ru.js',
@@ -184,6 +194,7 @@ export function safariFix(callback) {
         require('intl/locale-data/jsonp/ko.js');
         require('intl/locale-data/jsonp/nl.js');
         require('intl/locale-data/jsonp/pl.js');
+		require('intl/locale-data/jsonp/hu.js');
         require('intl/locale-data/jsonp/pt.js');
         require('intl/locale-data/jsonp/tr.js');
         require('intl/locale-data/jsonp/ru.js');
@@ -202,6 +213,7 @@ export function doAddLocaleData() {
     addLocaleData(koLocaleData);
     addLocaleData(nlLocaleData);
     addLocaleData(plLocaleData);
+	addLocaleData(huLocaleData);
     addLocaleData(ptLocaleData);
     addLocaleData(trLocaleData);
     addLocaleData(ruLocaleData);
