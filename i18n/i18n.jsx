@@ -116,7 +116,7 @@ const languages = {
     'pt-BR': {
         value: 'pt-BR',
         name: 'Português (Brasil)',
-        order: 7,
+        order: 14,
         url: ptBR,
     },
     tr: {
