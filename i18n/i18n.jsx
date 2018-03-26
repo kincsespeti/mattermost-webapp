@@ -86,13 +86,13 @@ const languages = {
     ja: {
         value: 'ja',
         name: '日本語',
-        order: 13,
+        order: 14,
         url: ja,
     },
     ko: {
         value: 'ko',
         name: '한국어 (Alpha)',
-        order: 10,
+        order: 11,
         url: ko,
     },
     nl: {
@@ -116,31 +116,31 @@ const languages = {
     'pt-BR': {
         value: 'pt-BR',
         name: 'Português (Brasil)',
-        order: 14,
+        order: 8,
         url: ptBR,
     },
     tr: {
         value: 'tr',
         name: 'Türkçe',
-        order: 8,
+        order: 9,
         url: tr,
     },
     ru: {
         value: 'ru',
         name: 'Pусский (Alpha)',
-        order: 9,
+        order: 10,
         url: ru,
     },
     'zh-TW': {
         value: 'zh-TW',
         name: '中文 (繁體)',
-        order: 12,
+        order: 13,
         url: zhTW,
     },
     'zh-CN': {
         value: 'zh-CN',
         name: '中文 (简体)',
-        order: 11,
+        order: 12,
         url: zhCN,
     },
 };
